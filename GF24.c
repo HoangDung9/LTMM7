@@ -14,7 +14,7 @@ uint8_t gf2_4(uint8_t a, uint8_t b, uint8_t c) {
             ket_qua ^= a; 
         }
 
-        bool kiem_tra = (a & 0b1000) != 0; 
+        bool kiem_tra = a & 0b1000; 
         a = (a << 1) & 0b1111;              
 
         if (kiem_tra) {
@@ -28,7 +28,7 @@ uint8_t gf2_4(uint8_t a, uint8_t b, uint8_t c) {
 }
 
 int main() {
-    int nhap_a, nhap_b;
+    int nhap_a,nhap_b;
     scanf("%d %d", &nhap_a, &nhap_b);
 
     uint8_t c = 0b0011; 
@@ -37,7 +37,7 @@ int main() {
     
     uint8_t ket_qua = gf2_4(a, b, c);
 
-    printf("KET_QUA : %d(0x%X)\n", ket_qua, ket_qua);  
+    printf("%d(0x%X)\n", ket_qua, ket_qua);  
 
     return 0;
 }
